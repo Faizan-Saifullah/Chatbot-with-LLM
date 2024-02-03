@@ -7,8 +7,8 @@ device = "cuda:0" if torch.cuda.is_available() else "cpu"
 
 def ask(text):
   
-    model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-large").to(device)
-    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-large")
+    model = AutoModelForSeq2SeqLM.from_pretrained("google/flan-t5-xl").to(device)
+    tokenizer = AutoTokenizer.from_pretrained("google/flan-t5-xl")
 
     inputs = tokenizer(text, return_tensors="pt").to(device)
     input_length = inputs.input_ids.shape[1]
